@@ -17,8 +17,7 @@ class CustomerRepository {
 
     async findByName(name) {
         return await db.query(
-            'SELECT * FROM customer WHERE name like %?%',
-            [name]
+            `SELECT * FROM customer WHERE name like '%${name}%'`,
         );
     }
 
@@ -29,10 +28,10 @@ class CustomerRepository {
         );
     }
 
-    async update(id, name, email, phone, adress) {
+    async update(id, name, email, phone="", adress="") {
         return await db.query(
             'UPDATE customer SET name=?, email=?, phone=?, adress=? WHERE id=?',
-            [id, name, email, phone, adress]
+            [name, email, phone, adress, id]
         );
     }
 

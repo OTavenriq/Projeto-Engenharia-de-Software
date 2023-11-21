@@ -2,8 +2,10 @@ import CustomerRepository from '../respositories/customerRepository.js';
 
 class CustomerController {
     async index(req, res) {
+
         const customer = await CustomerRepository.findAll();
         res.json(customer);
+    
     }
 
     async show(req, res) {
@@ -16,15 +18,17 @@ class CustomerController {
         res.json(customer);
     }
 
+    async showByName(req, res) {
+        const { name } = req.params;
+        const customer = await CustomerRepository.findByName(name);
+
+        if (!customer) return res.status(404).json([]);
+
+        res.json(customer);
+    }
+
     async store(req, res) {
-        console.log(req.body)
-        console.log(req.params)
-        // console.log(req.params)
 
-        return res.json({ok: true});
-
-        console.log(req.body);
-        console.log(req);
         const { name, email, phone, legal_document, adress, born_date } = req.body;
 
         const customer = await CustomerRepository.create(name, email, phone, legal_document, adress, born_date);
@@ -33,6 +37,7 @@ class CustomerController {
     }
 
     async update(req, res) {
+
         const { id } = req.params;
         const { name, email, phone, adress } = req.body;
         await CustomerRepository.update(id, name, email, phone, adress);
