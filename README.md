@@ -9,7 +9,7 @@ Algumas das principais funções dos sistema são:
 * Exportar Locações para XLSX
 
 # Tecnologias
-* NodeJS - Versão 18.18.2
-* Fastify - Veersão 4.24.x
+* NodeJS - Versão 20.0.9
+* Express - Veersão 4.18.2
 * MySQL - Vesão 8.0.34
 * React - Versão 18.2.0
