@@ -45,7 +45,12 @@ Agradecemos o seu interesse em contribuir para o projeto 2V! Por favor, tome um 
 
 - Incentivamos a revisão de código entre os membros da equipe.
 - Aprenda com as sugestões e comentários recebidos durante a revisão.
-- Busque sempre o aperfeiçoamento do código.
+
+### Adição de Arquivos
+- Diagramas de classe, pacote, sequecial implantação e afins devem ser colocados na pasta `diagrama`, sempre com uma versão em imagem e o diagrama original editável.
+- A codificação deve ser colocada na pasta `scr`.
+- A documentação referente à padronização do projeto deve ser colocada na pasta `padrões adptados`.
+- A pasta `requisitos` está restrita ao arquivo do diagrama de caso de uso.
 
 ### Diretrizes de Mensagens de Commit
 
