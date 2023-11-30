@@ -46,6 +46,17 @@ Agradecemos o seu interesse em contribuir para o projeto 2V! Por favor, tome um 
 - Incentivamos a revisão de código entre os membros da equipe.
 - Aprenda com as sugestões e comentários recebidos durante a revisão.
 
+### Boas Práticas de Programação
+
+- Identação: Mantenha sempre o código identado para facilitar sua leitura.
+- Nomes de Variáveis: Dê nomes intuitivos às variáveis, isso irá ajudá-lo a enteder o que elas fazem.
+- Nomes de Funções: Assim como nas variáveis, dê nomes intuitivos às funções, dizendo em síntese o que elas fazem.
+- Comente o código sempre que possível.
+- Try e Catch: O uso de blocos Try e Catch te ajuda a ter um bom controle de exceções.
+- Evite loops: Percorra loops apenas se necessário, isso irá melhorar o desempenho do seu código.
+- Preze sempre pelo CLean Code: tenha um código simples, direto, eficiente e sem duplicidade.
+- Faça testes para todas as novas implementações de código.
+
 ### Adição de Arquivos
 - Diagramas de classe, pacote, sequecial implantação e afins devem ser colocados na pasta `diagrama`, sempre com uma versão em imagem e o diagrama original editável.
 - A codificação deve ser colocada na pasta `scr`.
