@@ -1,0 +1,53 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  top: 0;
+  position: sticky;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.button-column {
+  width: 200px;
+}
+
+.button-column button {
+  width: 80px;
+  margin-right: 5px;
+}
+
+.btn-edit {
+  margin: 4px;
+  background: #43a6ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-delete {
+  margin: 4px;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}

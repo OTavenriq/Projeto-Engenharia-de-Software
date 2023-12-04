@@ -15,23 +15,30 @@ class CustomerRepository {
         );
     }
 
+    async findByCpf(legal_document) {
+        return await db.query(
+            'SELECT legal_document AS has_legal_document FROM customer WHERE legal_document=?',
+            [legal_document]
+        );
+    }
+
     async findByName(name) {
         return await db.query(
             `SELECT * FROM customer WHERE name like '%${name}%'`,
         );
     }
 
-    async create(name, email, phone, legal_document, adress, born_date) {
+    async create(name, phone, legal_document, adress, born_date) {
         return await db.query(
-            'INSERT INTO customer(name, email, phone, legal_document, adress, born_date) VALUES(?, ?, ?, ?, ?, ?)',
-            [name, email, phone, legal_document, adress, born_date]
+            'INSERT INTO customer(name, phone, legal_document, adress, born_date) VALUES(?, ?, ?, ?, ?)',
+            [name, phone, legal_document, adress, born_date]
         );
     }
 
-    async update(id, name, email, phone="", adress="") {
+    async update(id, name, phone="", adress="") {
         return await db.query(
-            'UPDATE customer SET name=?, email=?, phone=?, adress=? WHERE id=?',
-            [name, email, phone, adress, id]
+            'UPDATE customer SET name=?, phone=?, adress=? WHERE id=?',
+            [name, phone, adress, id]
         );
     }
 

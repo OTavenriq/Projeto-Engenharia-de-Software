@@ -1,3 +1,4 @@
+import customerRepository from '../respositories/customerRepository.js';
 import CustomerRepository from '../respositories/customerRepository.js';
 
 class CustomerController {
@@ -29,20 +30,24 @@ class CustomerController {
 
     async store(req, res) {
 
-        const { name, email, phone, legal_document, adress, born_date } = req.body;
+        const { name, phone, legal_document, adress, born_date } = req.body;
 
-        const customer = await CustomerRepository.create(name, email, phone, legal_document, adress, born_date);
+        const has_legal_document  = await customerRepository.findByCpf(legal_document);
         
-        return res.json({name: name, email: email, phone: phone, legal_document: legal_document, adress: adress, born_date: born_date});
+        if(has_legal_document.length) return res.sendStatus(400);
+
+        const customer = await CustomerRepository.create(name, phone, legal_document, adress, born_date);
+                
+        return res.json({name: name, phone: phone, legal_document: legal_document, adress: adress});
     }
 
     async update(req, res) {
-
         const { id } = req.params;
-        const { name, email, phone, adress } = req.body;
-        await CustomerRepository.update(id, name, email, phone, adress);
+        const { name, phone, adress } = req.body;
+
+        await CustomerRepository.update(id, name, phone, adress);
         
-        res.status(200).json({ name:name, email:email, phone:phone, adress:adress });
+        res.status(200).json({ name:name, phone:phone, adress:adress });
     }
 
     async delete(req, res) {
