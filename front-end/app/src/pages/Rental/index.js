@@ -33,19 +33,19 @@ export default function Rental() {
 				<div className="main-container">
 					<div className="header">
 						<h1>Gerenciar Locações</h1>
-						<div className="search-wrapper">
+						{/* <div className="search-wrapper">
 							<input type="date" className="input-data-search" />
 							<input
 								type="text"
 								placeholder="Busca Cliente"
 								className="input-text-search"
 							/>
-						</div>
+						</div> */}
 					</div>
 					<div className="content-body">
 						<TableRental
-							col1="Livro"
-							col2="Cliente"
+							col1="Cliente"
+							col2="Livro"
 							col3="Data Locação"
 							col4="Data Devolução"
 							data={rentals}

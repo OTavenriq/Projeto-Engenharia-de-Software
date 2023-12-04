@@ -6,15 +6,15 @@ export default function Sidebar() {
     <div className="sidebar">
       <ul>
         <a href="" className="sidebar-logo">
-          logo
+          <img src="/images/logo.png"></img>
         </a>
         <li>
-          <Link to="">Gerenciar Clientes</Link>
+          <Link to="/Customer">Gerenciar Clientes</Link>
         </li>
         <li>
-          <Link to="">Gerenciar Locações</Link>
+          <Link to="/Rental">Gerenciar Locações</Link>
         </li>
-        <Link to="">
+        <Link to="/">
           <button className="logoutBtn">Logout</button>
         </Link>
       </ul>
